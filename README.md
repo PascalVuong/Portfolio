@@ -73,3 +73,9 @@ Laatste 2 versies van Chrome, Edge, Firefox, Safari.
 - **Skip-link** op elke pagina:
   ```html
   <a class="skip-link" href="#main">Direct naar hoofdinhoud</a>
+
+## Ontwikkelomgeving
+
+- Editor: VS Code
+- Server: PHP 8 / Apache (XAMPP/WAMP) of `php -S localhost:8000` in de projectmap
+- Testbrowsers: Chrome, Edge, Firefox, Safari (laatste 2 versies)
