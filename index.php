@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio</title>
+  <title>Home — Pascal Vuong Portfolio</title>
 
   <link rel="stylesheet" href="assets/css/base.css"/>
   <link rel="stylesheet" href="assets/css/layout.css"/>
@@ -30,7 +30,7 @@
     </ul>
   </nav>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section>
       <h2>Home</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod nibh at risus suscipit, sed interdum felis viverra. Donec vitae urna ut nibh feugiat egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam sit amet neque a nisi tincidunt posuere.</p>
