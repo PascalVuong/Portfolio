@@ -12,7 +12,6 @@ Ik ben Pascal Vuong, junior software developer. In dit portfolio laat ik mijn sk
 Deze repo laat dus zien **waar en hoe** Grid en Flex zijn toegepast, en hoe de semantische structuur is opgezet.
 
 ## Projectstructuur
-.
 ├── index.php # Home (header, nav, main>section, footer)
 ├── projects.php # Projects (section#projecten met meerdere <article>-kaarten)
 ├── autobiography.php # Autobiography (section + lorem)
