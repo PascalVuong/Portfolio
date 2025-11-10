@@ -13,17 +13,23 @@ Deze repo laat dus zien **waar en hoe** Grid en Flex zijn toegepast, en hoe de s
 
 ## Projectstructuur
 
-└─ assets/
-└─ css/
-├─ base.css # basis + focus/skip-link (WCAG A)
-├─ layout.css # CSS Grid (pagina + projectenraster)
-└─ components.css # Flexbox (navigatie)
-├─ index.php # Home (header, nav, main>section, footer)
-├─ projects.php # Projecten (section#projecten met meerdere <article> kaarten)
-├─ autobiography.php # Autobiografie (section + lorem)
-├─ services.php # Services (section + lorem)
-├─ experience.php # Experience (section + lorem)
-├─ contact.php # Contact (section + lorem)
+```
+├── assets/
+│   └── css/
+│       ├── base.css
+│       ├── components.css
+│       ├── desktop.css
+│       ├── layout.css
+│       └── tablet.css
+├── autobiography.php
+├── contact.php
+├── experience.php
+├── index.php
+├── LICENSE
+├── projects.php
+├── README.md
+└── services.php
+```
 
 ## PvE — Responsive plan (Opdracht 3)
 
@@ -67,3 +73,9 @@ Laatste 2 versies van Chrome, Edge, Firefox, Safari.
 - **Skip-link** op elke pagina:
   ```html
   <a class="skip-link" href="#main">Direct naar hoofdinhoud</a>
+
+## Ontwikkelomgeving
+
+- Editor: VS Code
+- Server: PHP 8 / Apache (XAMPP/WAMP) of `php -S localhost:8000` in de projectmap
+- Testbrowsers: Chrome, Edge, Firefox, Safari (laatste 2 versies)
