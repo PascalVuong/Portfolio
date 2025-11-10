@@ -13,18 +13,19 @@ Deze repo laat dus zien **waar en hoe** Grid en Flex zijn toegepast, en hoe de s
 
 ## Projectstructuur
 
-.
+```
+└── assets/
+    └── css/
+        ├── base.css       # basis + focus/skip-link (WCAG A)
+        ├── layout.css     # CSS Grid (pagina + projectenraster)
+        └── components.css # Flexbox (navigatie)
 ├── index.php              # Home (header, nav, main>section, footer)
 ├── projects.php           # Projects (section#projecten met meerdere <article>-kaarten)
 ├── autobiography.php      # Autobiography (section + lorem)
 ├── services.php           # Services (section + lorem)
 ├── experience.php         # Experience (section + lorem)
 ├── contact.php            # Contact (section + lorem)
-└── assets/
-    └── css/
-        ├── base.css       # basis + focus/skip-link (WCAG A)
-        ├── layout.css     # CSS Grid (pagina + projectenraster)
-        └── components.css # Flexbox (navigatie)
+```
 
 ## PvE — Responsive plan (Opdracht 3)
 
