@@ -1,0 +1,28 @@
+/* Base + WCAG A focus */
+*{ box-sizing: border-box; }
+html{ font-size: 100%; }
+body{ margin: 0; font-family: system-ui, Arial, sans-serif; line-height: 1.6; }
+h1, h2, h3{ margin: 0 0 .5rem 0; }
+p{ margin: 0 0 1rem 0; }
+
+/* Zichtbare focus (WCAG A) */
+:where(a,button,input,select,textarea):focus-visible{
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+/* Skip link (WCAG A) — vast in de hoek van het scherm */
+.skip-link{
+  position: fixed;      /* was: absolute */
+  left: -9999px;
+  top: auto;
+}
+.skip-link:focus{
+  left: .75rem;         /* rem voor spacing */
+  top:  .75rem;
+  background: #fffa;
+  padding: .5rem 1rem;
+  border: 1px solid #000;  /* px voor border */
+  border-radius: .5rem;
+  z-index: 1000;        /* boven de header tonen */
+}

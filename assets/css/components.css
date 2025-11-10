@@ -1,0 +1,17 @@
+/* Flexbox: navigatie */
+nav ul{
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* breekt netjes op kleine schermen */
+}
+
+nav a{
+  display: inline-block;
+  text-decoration: none;
+  padding: .6em 1em;     /* em schaalt met tekstgrootte */
+  border: 1px solid #888;
+  border-radius: .75rem; /* “pill”-look zoals in je wireframe */
+}
