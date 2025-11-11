@@ -1,0 +1,18 @@
+$maxw: 80rem;
+
+$space-1: .5rem;
+$space-2: 1rem;
+$radius: .5rem;
+$pill-radius: .75rem;
+
+$border: #444;
+$font-stack: system-ui, Arial, sans-serif;
+
+$break-tablet: 48rem;
+$break-desktop: 64rem;
+
+$ns: (
+  font: $font-stack,
+  background: #fffa,
+  margin: $space-2
+);

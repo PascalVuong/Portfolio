@@ -1,0 +1,26 @@
+@use 'tokens';
+@use 'placeholder' as *;
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2;
+  max-width: tokens.$maxw;
+  margin-inline: auto;
+}
+
+header, nav, main, footer, section, article { @extend %panel; }
+
+#projecten { display: grid; gap: tokens.$space-2; }
+#projecten > article { border-style: dashed; }
+
+@media (min-width: tokens.$break-tablet) {
+  #projecten {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    align-items: start;
+  }
+}

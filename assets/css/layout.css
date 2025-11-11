@@ -1,37 +1,37 @@
-/* Grid: paginalayout (header, nav, main, footer in rijen) */
-html, body{ height: 100%; }
-body{
+header, nav, main, footer, section, article {
+  border: 1px solid #444;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
   margin: 0;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   gap: 1rem;
   padding: 1rem;
-  /* max-width: 80rem;
-  /* margin-inline: auto; */
+  max-width: 80rem;
+  margin-inline: auto;
 }
 
-/* Elementen zichtbaar afgebakend (eis van de opdracht) */
-header, nav, main, footer, section, article{
-  border: 1px solid #444;
-  padding: 1rem;
-  border-radius: .5rem;
-}
-
-/* Grid: projectenraster (op projecten.php) */
-#projecten{
+#projecten {
   display: grid;
   gap: 1rem;
 }
 
-/* Cards zelf zichtbaar onderscheiden */
-#projecten > article{
+#projecten > article {
   border-style: dashed;
 }
 
-/* Tablet+: meerdere kolommen voor de projecten-cards */
-@media (min-width: 48rem){
-  #projecten{
+@media (min-width: 48rem) {
+  #projecten {
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     align-items: start;
   }
 }
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,39 @@
+@use 'tokens';
+@use 'sass:color';
+
+nav {
+  ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    padding: .6em 1em;
+    border: 1px solid tokens.$border;
+    border-radius: tokens.$pill-radius;
+    transition: border-color .15s ease; /* & (self) kan ook, maar zo netter */
+
+    /* 1) &:hover / &:focus-visible — pseudo class */
+    &:hover,
+    &:focus-visible {
+      border-color: color.adjust(tokens.$border, $lightness: -10%);
+    }
+
+    /* 2) &.is-current — modifier class (BEM-achtig) */
+    &.is-current {
+      border-color: color.adjust(tokens.$border, $lightness: -20%);
+      font-weight: 600;
+    }
+
+    /* 3) & + & — adjacent sibling (geen visueel effect) */
+    & + & {
+      --adjacent: 1;
+    }
+  }
+}

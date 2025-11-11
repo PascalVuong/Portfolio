@@ -1,0 +1,12 @@
+@use 'tokens';
+
+%panel {
+  border: 1px solid tokens.$border;
+  padding: tokens.$space-2;
+  border-radius: tokens.$radius;
+}
+
+%focus-ring {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}

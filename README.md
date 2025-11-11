@@ -31,6 +31,29 @@ Deze repo laat dus zien **waar en hoe** Grid en Flex zijn toegepast, en hoe de s
 └── services.php
 ```
 
+## Pagina’s & semantiek (document outline)
+
+- Overal: `<header>`, `<nav>`, `<main id="main">`, `<section>`, `<footer>`, 1× `<h1>` per pagina.
+- **Projecten**: `<section id="projecten">` met meerdere `<article>` + `<h3>` (cards).
+
+## Waar Grid en Flex zijn toegepast
+
+- **Flexbox**: `assets/css/components.css` → `nav ul { display:flex; gap:1rem; flex-wrap:wrap; }`
+- **Grid (pagina)**: `assets/css/layout.css` → `body { display:grid; grid-template-rows:auto auto 1fr auto; }`
+- **Grid (content)**: `assets/css/layout.css` → `#projecten { display:grid; … }` + `@media (min-width:48rem){ grid-template-columns: repeat(auto-fit, minmax(16rem,1fr)); }`
+
+## Toegankelijkheid (minimaal WCAG A)
+
+- **Skip-link** op elke pagina:
+  ```html
+  <a class="skip-link" href="#main">Direct naar hoofdinhoud</a>
+
+## Ontwikkelomgeving
+
+- Editor: VS Code
+- Server: PHP 8 / Apache (XAMPP/WAMP) of `php -S localhost:8000` in de projectmap
+- Testbrowsers: Chrome, Edge, Firefox, Safari (laatste 2 versies)
+
 ## PvE — Responsive plan (Opdracht 3)
 
 **Browsers**  
@@ -57,25 +80,21 @@ Laatste 2 versies van Chrome, Edge, Firefox, Safari.
 - **Grid (content)**: `assets/css/layout.css` → `#projecten { display:grid; … }` + media query vanaf 48rem.  
 - **Outline**: `index.php` (Home) en `projecten.php` (H1 → H2 → H3 in `<article>`s).
 
-## Pagina’s & semantiek (document outline)
+## Opdracht 4 — Preprocessors (SCSS)
 
-- Overal: `<header>`, `<nav>`, `<main id="main">`, `<section>`, `<footer>`, 1× `<h1>` per pagina.
-- **Projecten**: `<section id="projecten">` met meerdere `<article>` + `<h3>` (cards).
+**Toegepast in code**
+- Geneste selectors: `nav { ul { … } a { … } }` → `assets/scss/components.scss`
+- `&` (3 manieren): `&:hover`, `&.is-current`, `& + &` → `assets/scss/components.scss`
+- Namespace/map + variabelen: `$ns`, `$border`, `$space-*`, `$font-stack` → `assets/scss/_tokens.scss`
+- Operations: `color.adjust($border, $lightness: -10%)` → `assets/scss/components.scss`
+- `@media` (tablet): `@media (min-width: tokens.$break-tablet)` → `assets/scss/layout.scss`
+- `@extend` placeholders: `%panel`, `%focus-ring` → gebruikt in `base.scss`/`layout.scss`
+- Module-systeem: `@use 'tokens'`, `@use 'placeholder' as *` → in alle SCSS files
 
-## Waar Grid en Flex zijn toegepast
-
-- **Flexbox**: `assets/css/components.css` → `nav ul { display:flex; gap:1rem; flex-wrap:wrap; }`
-- **Grid (pagina)**: `assets/css/layout.css` → `body { display:grid; grid-template-rows:auto auto 1fr auto; }`
-- **Grid (content)**: `assets/css/layout.css` → `#projecten { display:grid; … }` + `@media (min-width:48rem){ grid-template-columns: repeat(auto-fit, minmax(16rem,1fr)); }`
-
-## Toegankelijkheid (minimaal WCAG A)
-
-- **Skip-link** op elke pagina:
-  ```html
-  <a class="skip-link" href="#main">Direct naar hoofdinhoud</a>
-
-## Ontwikkelomgeving
-
-- Editor: VS Code
-- Server: PHP 8 / Apache (XAMPP/WAMP) of `php -S localhost:8000` in de projectmap
-- Testbrowsers: Chrome, Edge, Firefox, Safari (laatste 2 versies)
+**Build**
+```bash
+npx sass assets/scss/base.scss assets/css/base.css
+npx sass assets/scss/layout.scss assets/css/layout.css
+npx sass assets/scss/components.scss assets/css/components.css
+# of watch:
+npx sass --watch assets/scss/base.scss:assets/css/base.css assets/scss/layout.scss:assets/css/layout.css assets/scss/components.scss:assets/css/components.css
